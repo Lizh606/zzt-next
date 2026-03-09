@@ -43,7 +43,7 @@ export default function Hero() {
             智享<br /><span className="text-blue-400">制造强国质量基础设施一站式服务平台</span>
           </h2>
           <p className="text-blue-100 text-lg lg:text-xl mb-8 leading-relaxed opacity-90">
-            为企业提供全要素、全过程、全周期、全产业链的“一揽子”综合质量服务，赋能株洲制造高质量发展。
+            为企业提供全要素、全过程、全周期、全产业链的“一揽子”综合质量服务，赋能湖南制造高质量发展。
           </p>
           <div className="bg-white p-2 rounded-xl shadow-2xl flex flex-col md:flex-row gap-2 mb-6">
             <div className="flex-grow flex items-center px-4">
