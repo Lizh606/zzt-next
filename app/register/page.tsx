@@ -12,7 +12,7 @@ export default function RegisterPage() {
             <Building2 className="text-[#0054db]" size={28} />
           </div>
           <h2 className="text-2xl font-bold text-slate-900">注册账号</h2>
-          <p className="text-sm text-slate-500 mt-2">加入株质通，体验一站式质量服务</p>
+          <p className="text-sm text-slate-500 mt-2">加入株洲市质量基础设施一站式服务平台</p>
         </div>
 
         <form className="space-y-5">

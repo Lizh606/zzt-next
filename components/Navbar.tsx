@@ -59,7 +59,7 @@ export default function Navbar() {
             referrerPolicy="no-referrer"
           />
           <h1 className="text-xl font-bold tracking-tight text-slate-900">
-            株质通
+             株洲市质量基础设施<br />一站式服务平台
           </h1>
         </Link>
 
