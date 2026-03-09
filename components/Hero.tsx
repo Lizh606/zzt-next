@@ -38,7 +38,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-950/50 z-0"></div>
       
       <div className="container mx-auto px-4 lg:px-20 relative z-10 py-20 text-center lg:text-left">
-        <div className="max-w-3xl">
+        <div className="max-w-6xl">
           <h2 className="text-white text-4xl lg:text-6xl font-black leading-tight mb-4">
             智享<br /><span className="text-blue-400">制造强国质量基础设施一站式服务平台</span>
           </h2>

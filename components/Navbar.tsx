@@ -62,7 +62,7 @@ export default function Navbar() {
             <h1 className="text-base md:text-lg font-bold tracking-tight text-slate-900 leading-tight">
               智享
             </h1>
-            <span className="text-xs md:text-sm font-bold text-[#0054db] tracking-widest mt-0.5">
+            <span className="text-xs md:text-sm font-bold text-[#0054db] tracking-wide mt-0.5">
               制造强国质量基础设施一站式服务平台
             </span>
           </div>
@@ -118,8 +118,8 @@ export default function Navbar() {
                     referrerPolicy="no-referrer"
                   />
                   <div className="flex flex-col">
-                    <span className="text-base font-bold text-slate-900 leading-tight">株洲市质量基础设施</span>
-                    <span className="text-xs font-bold text-[#0054db] tracking-widest mt-0.5">一站式服务平台</span>
+                    <span className="text-base font-bold text-slate-900 leading-tight">智享</span>
+                    <span className="text-xs font-bold text-[#0054db] tracking-widest mt-0.5">制造强国质量基础设施一站式服务平台</span>
                   </div>
                 </SheetTitle>
               </SheetHeader>
