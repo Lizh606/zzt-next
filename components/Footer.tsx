@@ -59,7 +59,7 @@ export default function Footer() {
         
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-slate-400">
           <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2">
-            <span>© 2024 株洲市市场监督管理局 版权所有</span>
+            <span>© 2026 株洲市市场监督管理局 版权所有</span>
             <a className="hover:text-white transition-colors" href="#">湘ICP备XXXXXXXX号</a>
             <a className="hover:text-white transition-colors" href="#">湘公网安备 XXXXXXXXXXXX号</a>
           </div>

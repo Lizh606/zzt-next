@@ -2,7 +2,7 @@
 import { Search, Menu, X, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
-import logoImg from '@/app/logo.png';
+import logoImg from '@/app/public/logo.png';
 import Link from 'next/link';
 import {
   NavigationMenu,

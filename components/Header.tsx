@@ -1,6 +1,6 @@
 import { Search, Menu, Download, UserPlus } from 'lucide-react';
 import Image from 'next/image';
-import logoImg from '@/app/logo.png';
+import logoImg from '@/app/public/logo.png';
 
 export default function Header() {
   return (
