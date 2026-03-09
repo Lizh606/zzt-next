@@ -40,7 +40,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 lg:px-20 relative z-10 py-20 text-center lg:text-left">
         <div className="max-w-3xl">
           <h2 className="text-white text-4xl lg:text-6xl font-black leading-tight mb-4">
-            株洲市质量基础设施<br /><span className="text-blue-400">一站式服务平台</span>
+            智享<br /><span className="text-blue-400">制造强国质量基础设施一站式服务平台</span>
           </h2>
           <p className="text-blue-100 text-lg lg:text-xl mb-8 leading-relaxed opacity-90">
             为企业提供全要素、全过程、全周期、全产业链的“一揽子”综合质量服务，赋能株洲制造高质量发展。

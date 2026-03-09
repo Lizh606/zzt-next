@@ -12,6 +12,7 @@ export default function Footer() {
                 <Building className="text-blue-500 mt-1" size={20} />
                 <div>
                   <p className="text-slate-400 text-xs mb-1 uppercase tracking-wider">指导单位</p>
+                  <p className="text-slate-200">湖南省市场监督管理局</p>
                   <p className="text-slate-200">株洲市市场监督管理局</p>
                 </div>
               </div>

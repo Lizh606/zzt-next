@@ -19,10 +19,10 @@ export default function Header() {
           </div>
           <div className="flex flex-col justify-center">
             <h1 className="text-base md:text-lg font-bold tracking-tight text-slate-900 leading-tight">
-              株洲市质量基础设施
+              智享
             </h1>
             <span className="text-xs md:text-sm font-bold text-[#0054db] tracking-widest mt-0.5">
-              一站式服务平台
+              制造强国质量基础设施一站式服务平台
             </span>
           </div>
         </div>
