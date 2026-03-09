@@ -48,36 +48,41 @@ export default function Navbar() {
 
   return (
     <header className="bg-white sticky top-0 z-50 shadow-sm">
-      <div className="container mx-auto px-4 lg:px-20 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
+      <div className="container mx-auto px-4 lg:px-20 py-3 flex items-center justify-between gap-4">
+        <Link href="/" className="flex items-center gap-3 shrink-0">
           <Image
             src={logoImg}
             alt="Logo"
             width={48}
             height={48}
-            className="h-12 w-auto"
+            className="h-10 md:h-12 w-auto"
             referrerPolicy="no-referrer"
           />
-          <h1 className="text-xl font-bold tracking-tight text-slate-900">
-             株洲市质量基础设施<br />一站式服务平台
-          </h1>
+          <div className="flex flex-col justify-center">
+            <h1 className="text-base md:text-lg font-bold tracking-tight text-slate-900 leading-tight">
+              株洲市质量基础设施
+            </h1>
+            <span className="text-xs md:text-sm font-bold text-[#0054db] tracking-widest mt-0.5">
+              一站式服务平台
+            </span>
+          </div>
         </Link>
 
-        <div className="hidden xl:flex items-center">
+        <div className="hidden xl:flex items-center justify-end flex-1">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="gap-1">
               {navItems.map((item) => (
                 <NavigationMenuItem key={item.title}>
                   {item.sub ? (
                     <>
-                      <NavigationMenuTrigger className={navigationMenuTriggerStyle()}>
+                      <NavigationMenuTrigger className="bg-transparent hover:bg-slate-100/50 text-slate-700 hover:text-[#0054db] font-medium text-base">
                         {item.title}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <ul className="grid w-[200px] gap-3 p-4">
+                        <ul className="grid w-[200px] gap-2 p-3 bg-white rounded-xl shadow-lg border border-slate-100">
                           {item.sub.map((subItem) => (
                             <li key={subItem}>
-                              <NavigationMenuLink href={`${item.href}?tab=${subItem}`} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 hover:text-[#0054db]">
+                              <NavigationMenuLink href={`${item.href}?tab=${subItem}`} className="block select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-50 hover:text-[#0054db] text-slate-600 font-medium text-sm">
                                 {subItem}
                               </NavigationMenuLink>
                             </li>
@@ -86,7 +91,7 @@ export default function Navbar() {
                       </NavigationMenuContent>
                     </>
                   ) : (
-                    <NavigationMenuLink href={item.href} className={navigationMenuTriggerStyle()}>
+                    <NavigationMenuLink href={item.href} className="bg-transparent hover:bg-slate-100/50 text-slate-700 hover:text-[#0054db] font-medium text-base px-4 py-2 rounded-md transition-colors inline-flex items-center justify-center">
                       {item.title}
                     </NavigationMenuLink>
                   )}
@@ -96,10 +101,10 @@ export default function Navbar() {
           </NavigationMenu>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center xl:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger className="xl:hidden inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-slate-100 h-9 w-9">
-              <Menu size={20} />
+            <SheetTrigger className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-slate-100 h-10 w-10">
+              <Menu size={24} className="text-slate-700" />
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px] flex flex-col p-0">
               <SheetHeader className="p-6 border-b border-slate-100 text-left">
@@ -112,7 +117,10 @@ export default function Navbar() {
                     className="h-8 w-auto"
                     referrerPolicy="no-referrer"
                   />
-                  <span className="text-lg font-bold">株质通</span>
+                  <div className="flex flex-col">
+                    <span className="text-base font-bold text-slate-900 leading-tight">株洲市质量基础设施</span>
+                    <span className="text-xs font-bold text-[#0054db] tracking-widest mt-0.5">一站式服务平台</span>
+                  </div>
                 </SheetTitle>
               </SheetHeader>
               <div className="flex-1 overflow-y-auto p-6">
@@ -130,11 +138,11 @@ export default function Navbar() {
                                 <a
                                   key={subItem}
                                   href={`${item.href}?tab=${subItem}`}
-                                  className="text-sm text-slate-600 hover:text-[#0054db] py-2 px-4 rounded-md hover:bg-blue-50 transition-colors flex items-center justify-between group"
+                                  className="text-sm font-medium text-slate-600 hover:text-[#0054db] py-2.5 px-4 rounded-lg hover:bg-blue-50 transition-colors flex items-center justify-between group"
                                   onClick={() => setIsOpen(false)}
                                 >
                                   {subItem}
-                                  <ChevronRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                                  <ChevronRight size={16} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                                 </a>
                               ))}
                             </div>

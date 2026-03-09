@@ -17,10 +17,13 @@ export default function Header() {
               referrerPolicy="no-referrer"
             />
           </div>
-          <div>
-            <h1 className="text-xl font-bold tracking-tight text-slate-900">
-              株洲市质量基础设施<br />一站式服务平台
+          <div className="flex flex-col justify-center">
+            <h1 className="text-base md:text-lg font-bold tracking-tight text-slate-900 leading-tight">
+              株洲市质量基础设施
             </h1>
+            <span className="text-xs md:text-sm font-bold text-[#0054db] tracking-widest mt-0.5">
+              一站式服务平台
+            </span>
           </div>
         </div>
         <nav className="hidden xl:flex items-center gap-8">
