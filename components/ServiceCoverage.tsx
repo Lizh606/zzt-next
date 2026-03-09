@@ -6,7 +6,7 @@ import SectionTitle from './SectionTitle';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
-import OSM from 'ol/source/OSM';
+import XYZ from 'ol/source/XYZ';
 import Feature from 'ol/Feature';
 import Point from 'ol/geom/Point';
 import { fromLonLat } from 'ol/proj';
@@ -70,7 +70,14 @@ export default function ServiceCoverage() {
       target: mapRef.current,
       layers: [
         new TileLayer({
-          source: new OSM(),
+          source: new XYZ({
+            url: 'https://t{0-7}.tianditu.gov.cn/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk=5a60febf0ef4d0f166c0dd49aa271838',
+          }),
+        }),
+        new TileLayer({
+          source: new XYZ({
+            url: 'https://t{0-7}.tianditu.gov.cn/DataServer?T=cva_w&x={x}&y={y}&l={z}&tk=5a60febf0ef4d0f166c0dd49aa271838',
+          }),
         }),
         vectorLayer,
       ],
