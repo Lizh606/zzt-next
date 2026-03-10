@@ -22,7 +22,7 @@ export default function TopNav() {
           <a className="hover:text-[#0054db]" href="/register">注册</a>
           <a
             className="bg-[#0054db] text-white px-2 sm:px-3 py-1 rounded-sm font-medium hover:bg-blue-700 transition-colors"
-            href="#"
+            href="/join"
           >
             机构入驻
           </a>
