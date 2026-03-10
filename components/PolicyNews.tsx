@@ -49,8 +49,14 @@ export default function PolicyNews() {
           <div className="flex flex-col gap-6">
             {displayNews.length > 0 && (
               <Link href={`/news?id=${displayNews[0].id}`} className="group flex flex-col sm:flex-row gap-4 items-center bg-slate-50 rounded-xl p-4 hover:shadow-md transition-all">
-                <div className="w-full sm:w-1/3 relative h-32 rounded-lg overflow-hidden shrink-0">
-                  <Image src={displayNews[0].image || "https://picsum.photos/seed/news/400/300"} alt="News" fill className="object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+                <div className="w-full sm:w-1/3 relative h-32 rounded-lg overflow-hidden shrink-0 bg-white">
+                  <Image 
+                    src={displayNews[0].image || "https://picsum.photos/seed/news/400/300"} 
+                    alt="News" 
+                    fill 
+                    className="object-contain group-hover:scale-105 transition-transform duration-500" 
+                    referrerPolicy="no-referrer" 
+                  />
                 </div>
                 <div className="w-full sm:w-2/3 flex flex-col justify-center">
                   <span className="text-[#0054db] font-bold text-xs mb-2">头条聚焦</span>

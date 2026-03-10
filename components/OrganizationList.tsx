@@ -27,14 +27,15 @@ export default function OrganizationList({ title, categories, data }: Organizati
   
   const [activeTab, setActiveTab] = useState(initialTab);
   const [searchQuery, setSearchQuery] = useState('');
+  const [prevTab, setPrevTab] = useState<string | null>(null);
 
-  // Update active tab if URL changes
-  useEffect(() => {
-    const tab = searchParams.get('tab');
+  const tab = searchParams.get('tab');
+  if (tab !== prevTab) {
+    setPrevTab(tab);
     if (tab && categories.includes(tab)) {
       setActiveTab(tab);
     }
-  }, [searchParams, categories]);
+  }
 
   const handleTabChange = (category: string) => {
     setActiveTab(category);

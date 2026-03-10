@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Search, FileText, Calendar, ArrowLeft, Building2 } from 'lucide-react';
+import Image from 'next/image';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { mockNews } from '@/lib/mockData';
@@ -10,17 +11,21 @@ import { mockNews } from '@/lib/mockData';
 function NewsInner() {
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedNews, setSelectedNews] = useState<typeof mockNews[0] | null>(null);
+  const [selectedNews, setSelectedNews] = useState<any>(null);
+  const [prevId, setPrevId] = useState<string | null>(null);
 
-  useEffect(() => {
-    const id = searchParams.get('id');
+  const id = searchParams.get('id');
+  if (id !== prevId) {
+    setPrevId(id);
     if (id) {
       const newsItem = mockNews.find(n => n.id.toString() === id);
       if (newsItem) {
         setSelectedNews(newsItem);
       }
+    } else {
+      setSelectedNews(null);
     }
-  }, [searchParams]);
+  }
 
   const filteredNews = mockNews.filter(
     (n) => n.title.includes(searchQuery) || n.content.includes(searchQuery)
@@ -51,7 +56,7 @@ function NewsInner() {
                   {selectedNews.title}
                 </h2>
                 
-                <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500 mb-12 pb-8 border-b border-slate-100">
+                <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500 mb-8 pb-8 border-b border-slate-100">
                   <div className="flex items-center gap-2">
                     <Building2 size={16} />
                     <span>发布部门：{selectedNews.department}</span>
@@ -61,6 +66,18 @@ function NewsInner() {
                     <span>发布日期：{selectedNews.date}</span>
                   </div>
                 </div>
+
+                {selectedNews.image && (
+                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-12 shadow-lg bg-slate-50">
+                    <Image 
+                      src={selectedNews.image} 
+                      alt={selectedNews.title} 
+                      fill
+                      className="object-contain"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                )}
 
                 <div className="prose prose-slate max-w-none prose-p:leading-relaxed prose-p:text-slate-700 whitespace-pre-wrap">
                   {selectedNews.content}
@@ -85,23 +102,36 @@ function NewsInner() {
                   filteredNews.map((newsItem) => (
                     <div 
                       key={newsItem.id} 
-                      className="py-6 group cursor-pointer"
+                      className="py-8 group cursor-pointer flex flex-col md:flex-row gap-6"
                       onClick={() => setSelectedNews(newsItem)}
                     >
-                      <h3 className="text-lg font-bold text-slate-800 mb-3 group-hover:text-[#0054db] transition-colors line-clamp-2">
-                        {newsItem.title}
-                      </h3>
-                      <p className="text-sm text-slate-600 mb-4 line-clamp-2">
-                        {newsItem.desc}
-                      </p>
-                      <div className="flex items-center gap-6 text-sm text-slate-500">
-                        <div className="flex items-center gap-1.5">
-                          <Building2 size={15} />
-                          <span>{newsItem.department}</span>
+                      {newsItem.image && (
+                        <div className="w-full md:w-48 h-32 rounded-xl overflow-hidden shrink-0 shadow-sm bg-slate-50 relative">
+                          <Image 
+                            src={newsItem.image} 
+                            alt={newsItem.title} 
+                            fill
+                            className="object-contain group-hover:scale-105 transition-transform duration-500"
+                            referrerPolicy="no-referrer"
+                          />
                         </div>
-                        <div className="flex items-center gap-1.5">
-                          <Calendar size={15} />
-                          <span>{newsItem.date}</span>
+                      )}
+                      <div className="flex-grow">
+                        <h3 className="text-lg font-bold text-slate-800 mb-3 group-hover:text-[#0054db] transition-colors line-clamp-2">
+                          {newsItem.title}
+                        </h3>
+                        <p className="text-sm text-slate-600 mb-4 line-clamp-2">
+                          {newsItem.desc}
+                        </p>
+                        <div className="flex items-center gap-6 text-sm text-slate-500">
+                          <div className="flex items-center gap-1.5">
+                            <Building2 size={15} />
+                            <span>{newsItem.department}</span>
+                          </div>
+                          <div className="flex items-center gap-1.5">
+                            <Calendar size={15} />
+                            <span>{newsItem.date}</span>
+                          </div>
                         </div>
                       </div>
                     </div>

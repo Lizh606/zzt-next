@@ -11,16 +11,20 @@ function PolicyNewsInner() {
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedPolicy, setSelectedPolicy] = useState<typeof mockPolicies[0] | null>(null);
+  const [prevId, setPrevId] = useState<string | null>(null);
 
-  useEffect(() => {
-    const id = searchParams.get('id');
+  const id = searchParams.get('id');
+  if (id !== prevId) {
+    setPrevId(id);
     if (id) {
       const policyItem = mockPolicies.find(p => p.id.toString() === id);
       if (policyItem) {
         setSelectedPolicy(policyItem);
       }
+    } else {
+      setSelectedPolicy(null);
     }
-  }, [searchParams]);
+  }
 
   const filteredPolicies = mockPolicies.filter(
     (p) => p.title.includes(searchQuery) || p.content.includes(searchQuery)

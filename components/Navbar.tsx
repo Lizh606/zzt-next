@@ -39,6 +39,7 @@ const navItems = [
     href: '#',
     sub: ['航空动力', '轨道交通', '硬质合金', '新材料', '先进半导体', '北斗规模应用'],
   },
+  { title: '制造业专区', href: '/manufacturing' },
   { title: '政策法规', href: '/policy-news' },
   { title: '分享专区', href: '/share-zone' },
 ];
