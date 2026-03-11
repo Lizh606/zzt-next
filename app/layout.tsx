@@ -7,7 +7,7 @@ import logo from '@/app/public/logo.png';
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: '智享制造强国质量基础设施一站式服务平台',
+  title: '智享-质量基础设施创新中心',
   description: '制造强国质量基础设施一站式服务平台，为企业提供全要素、全过程、全周期、全产业链的综合质量服务。',
   icons: {
     icon: logo.src,

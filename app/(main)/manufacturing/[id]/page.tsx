@@ -70,17 +70,17 @@ const manufacturingDetails: Record<string, any> = {
     ]
   },
   'dajing': {
-    title: '大京机械制造有限公司',
-    fullTitle: '大京机械制造有限公司',
+    title: '湖南大京科技有限公司',
+    fullTitle: '湖南大京科技有限公司',
     logo: imgDajing,
-    description: '大京机械制造有限公司是一家专业从事高端装备制造、精密零部件加工及技术服务的高新技术企业，致力于为全球客户提供优质的制造解决方案。',
-    longDescription: `大京机械在高端制造领域深耕多年，拥有先进的加工设备和严格的质量管理体系。公司专注于复杂结构件的精密加工，为能源、交通、重工等行业提供关键零部件支持。
+    description: '湖南大京科技有限公司是一家专业从事高端装备制造、精密零部件加工及技术服务的高新技术企业，致力于为全球客户提供优质的制造解决方案。',
+    longDescription: `大京科技成立于2021年，注册于国家级轨道交通及中小航空发动机千亿产业集群地（株洲），致力于五轴测量技术装备及解决方案研发，打造具有自主知识产权的五轴测量装备及测量整体解决方案的领军企业。
 
 我们通过持续的技术投入和人才培养，不断提升制造精度和生产效率，赢得了国内外客户的广泛信赖。`,
     website: 'www.dajing.com',
-    phone: '0731-88889999',
-    email: 'info@dajing.com',
-    address: '湖南省株洲市高新区大京路',
+    phone: '13787333130',
+    email: 'hndj_2021@163.com',
+    address: '湖南省株洲市芦淞区航陌路5号航空城科创园2.2期 1-3#栋',
     industryImages: [
       { src: hndj23, title: '高端装备产品 1' },
       { src: hndj24, title: '高端装备产品 2' },
@@ -194,19 +194,19 @@ export default function ManufacturingDetailPage() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="flex items-center gap-3 text-slate-500">
-                  <Globe size={18} className="text-[#0054db]" />
+                  <Globe size={18} className="text-[#0054db] shrink-0" />
                   <span className="text-sm">{data.website}</span>
                 </div>
                 <div className="flex items-center gap-3 text-slate-500">
-                  <Phone size={18} className="text-[#0054db]" />
+                  <Phone size={18} className="text-[#0054db] shrink-0" />
                   <span className="text-sm">{data.phone}</span>
                 </div>
                 <div className="flex items-center gap-3 text-slate-500">
-                  <Mail size={18} className="text-[#0054db]" />
+                  <Mail size={18} className="text-[#0054db] shrink-0" />
                   <span className="text-sm">{data.email}</span>
                 </div>
                 <div className="flex items-center gap-3 text-slate-500">
-                  <MapPin size={18} className="text-[#0054db]" />
+                  <MapPin size={18} className="text-[#0054db] shrink-0" />
                   <span className="text-sm">{data.address}</span>
                 </div>
               </div>

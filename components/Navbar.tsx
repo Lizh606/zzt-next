@@ -42,6 +42,7 @@ const navItems = [
   { title: '制造业专区', href: '/manufacturing' },
   { title: '政策法规', href: '/policy-news' },
   { title: '分享专区', href: '/share-zone' },
+  { title: '我的', href: '/my' },
 ];
 
 export default function Navbar() {
@@ -61,11 +62,8 @@ export default function Navbar() {
           />
           <div className="flex flex-col justify-center">
             <h1 className="text-base md:text-lg font-bold tracking-tight text-slate-900 leading-tight">
-              智享
+              智享-质量基础设施创新中心
             </h1>
-            <span className="text-xs md:text-sm font-bold text-[#0054db] tracking-wide mt-0.5">
-              制造强国质量基础设施一站式服务平台
-            </span>
           </div>
         </Link>
 
