@@ -5,9 +5,9 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const images = [
-  'https://picsum.photos/seed/hero1/1920/1080',
-  'https://picsum.photos/seed/hero2/1920/1080',
-  'https://picsum.photos/seed/hero3/1920/1080',
+  'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1920&auto=format&fit=crop', // Airplane
+  'https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=1920&auto=format&fit=crop', // Jet Engine
+  'https://images.unsplash.com/photo-1474487548417-781cb71495f3?q=80&w=1920&auto=format&fit=crop', // High-speed train (Zhuzhou rail transit)
 ];
 
 export default function Hero() {
@@ -40,32 +40,11 @@ export default function Hero() {
       <div className="container mx-auto px-4 lg:px-20 relative z-10 py-20 text-center lg:text-left">
         <div className="max-w-6xl">
           <h2 className="text-white text-4xl lg:text-6xl font-black leading-tight mb-4">
-            智享<br /><span className="text-blue-400">质量基础设施创新中心</span>
+            质享<br /><span className="text-blue-400">质量创新中心</span>
           </h2>
           <p className="text-blue-100 text-lg lg:text-xl mb-8 leading-relaxed opacity-90">
             为企业提供全要素、全过程、全周期、全产业链的“一揽子”综合质量服务，赋能湖南制造高质量发展。
           </p>
-          <div className="bg-white p-2 rounded-xl shadow-2xl flex flex-col md:flex-row gap-2 mb-6">
-            <div className="flex-grow flex items-center px-4">
-              <Search className="text-slate-400 mr-2" size={20} />
-              <input
-                className="w-full border-none focus:ring-0 text-slate-800 placeholder-slate-400 py-3 outline-none"
-                placeholder="搜索检验检测、计量服务、轨道交通等..."
-                type="text"
-              />
-            </div>
-            <button className="bg-blue-700 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-800 transition-all flex items-center justify-center gap-2">
-              立即搜索
-            </button>
-          </div>
-          
-          <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-10 text-sm">
-            <span className="text-white/70">热门：</span>
-            <a className="text-white hover:text-blue-400 transition-colors" href="#">检验检测</a>
-            <a className="text-white hover:text-blue-400 transition-colors" href="#">计量服务</a>
-            <a className="text-white hover:text-blue-400 transition-colors" href="#">轨道交通</a>
-            <a className="text-white hover:text-blue-400 transition-colors" href="#">硬质合金</a>
-          </div>
         </div>
       </div>
 

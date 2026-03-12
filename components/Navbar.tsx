@@ -49,58 +49,48 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-sm">
-      <div className="container mx-auto px-4 lg:px-20 py-3 flex items-center justify-between gap-4">
+    <header className="bg-white sticky top-0 z-50 shadow-sm flex flex-col">
+      {/* Top Part: Logo and Search */}
+      <div className="container mx-auto px-4 lg:px-20 py-5 flex flex-col md:flex-row items-center justify-between gap-6 relative">
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <Image
             src={logoImg}
             alt="Logo"
             width={48}
             height={48}
-            className="h-10 md:h-12 w-auto"
+            className="h-12 w-auto"
             referrerPolicy="no-referrer"
           />
           <div className="flex flex-col justify-center">
-            <h1 className="text-base md:text-lg font-bold tracking-tight text-slate-900 leading-tight">
-              智享-质量基础设施创新中心
+            <h1 className="text-xl md:text-2xl font-bold tracking-tight text-slate-900 leading-tight">
+              质享-质量创新中心
             </h1>
           </div>
         </Link>
 
-        <div className="hidden xl:flex items-center justify-end flex-1">
-          <NavigationMenu>
-            <NavigationMenuList className="gap-1">
-              {navItems.map((item) => (
-                <NavigationMenuItem key={item.title}>
-                  {item.sub ? (
-                    <>
-                      <NavigationMenuTrigger className="bg-transparent hover:bg-slate-100/50 text-slate-700 hover:text-[#0054db] font-medium text-base">
-                        {item.title}
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent>
-                        <ul className="grid w-[200px] gap-2 p-3 bg-white rounded-xl shadow-lg border border-slate-100">
-                          {item.sub.map((subItem) => (
-                            <li key={subItem}>
-                              <NavigationMenuLink href={`${item.href}?tab=${subItem}`} className="block select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-50 hover:text-[#0054db] text-slate-600 font-medium text-sm">
-                                {subItem}
-                              </NavigationMenuLink>
-                            </li>
-                          ))}
-                        </ul>
-                      </NavigationMenuContent>
-                    </>
-                  ) : (
-                    <NavigationMenuLink href={item.href} className="bg-transparent hover:bg-slate-100/50 text-slate-700 hover:text-[#0054db] font-medium text-base px-4 py-2 rounded-md transition-colors inline-flex items-center justify-center">
-                      {item.title}
-                    </NavigationMenuLink>
-                  )}
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
+        {/* Search Bar (Moved from Hero) */}
+        <div className="w-full md:w-[500px] hidden md:block ml-auto">
+          <div className="flex h-9">
+            <input
+              className="w-full border-2 border-[#0054db] px-3 py-1 outline-none text-sm placeholder-slate-400"
+              placeholder="搜索检验检测、计量服务、轨道交通等..."
+              type="text"
+            />
+            <button className="bg-[#0054db] text-white px-6 py-1 text-sm font-medium hover:bg-blue-800 transition-colors whitespace-nowrap shrink-0">
+              搜索
+            </button>
+          </div>
+          <div className="flex gap-3 mt-1.5 text-xs">
+            <span className="text-slate-500">热门：</span>
+            <a className="text-red-500 hover:underline" href="#">检验检测</a>
+            <a className="text-red-500 hover:underline" href="#">计量服务</a>
+            <a className="text-red-500 hover:underline" href="#">轨道交通</a>
+            <a className="text-red-500 hover:underline" href="#">硬质合金</a>
+          </div>
         </div>
 
-        <div className="flex items-center xl:hidden">
+        {/* Mobile menu button */}
+        <div className="flex items-center xl:hidden absolute right-4 top-6">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-slate-100 h-10 w-10">
               <Menu size={24} className="text-slate-700" />
@@ -117,8 +107,7 @@ export default function Navbar() {
                     referrerPolicy="no-referrer"
                   />
                   <div className="flex flex-col">
-                    <span className="text-base font-bold text-slate-900 leading-tight">智享</span>
-                    <span className="text-xs font-bold text-[#0054db] tracking-widest mt-0.5">制造强国质量基础设施一站式服务平台</span>
+                    <span className="text-base font-bold text-slate-900 leading-tight">质享-质量创新中心</span>
                   </div>
                 </SheetTitle>
               </SheetHeader>
@@ -162,6 +151,42 @@ export default function Navbar() {
               </div>
             </SheetContent>
           </Sheet>
+        </div>
+      </div>
+
+      {/* Bottom Part: Navigation Bar */}
+      <div className="bg-[#0054db] w-full hidden xl:block">
+        <div className="container mx-auto px-4 lg:px-20">
+          <NavigationMenu className="max-w-full justify-start">
+            <NavigationMenuList className="gap-0 w-full justify-between">
+              {navItems.map((item) => (
+                <NavigationMenuItem key={item.title}>
+                  {item.sub ? (
+                    <>
+                      <NavigationMenuTrigger className="bg-transparent hover:!bg-blue-800 data-[state=open]:!bg-blue-800 text-white hover:!text-white focus:!text-white focus:!bg-blue-800 font-medium text-base rounded-none h-12 px-6">
+                        {item.title}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <ul className="grid w-[200px] gap-2 p-3 bg-white rounded-xl shadow-lg border border-slate-100">
+                          {item.sub.map((subItem) => (
+                            <li key={subItem}>
+                              <NavigationMenuLink href={`${item.href}?tab=${subItem}`} className="block select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-50 hover:text-[#0054db] text-slate-600 font-medium text-sm">
+                                {subItem}
+                              </NavigationMenuLink>
+                            </li>
+                          ))}
+                        </ul>
+                      </NavigationMenuContent>
+                    </>
+                  ) : (
+                    <NavigationMenuLink href={item.href} className="bg-transparent hover:!bg-blue-800 text-white hover:!text-white focus:!bg-blue-800 focus:!text-white font-medium text-base px-6 h-12 transition-colors inline-flex items-center justify-center">
+                      {item.title}
+                    </NavigationMenuLink>
+                  )}
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
       </div>
     </header>

@@ -11,7 +11,7 @@ export default function LoginPage() {
           <div className="mx-auto h-12 w-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
             <Building2 className="text-[#0054db]" size={28} />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">登录智享</h2>
+          <h2 className="text-2xl font-bold text-slate-900">登录质享</h2>
         </div>
 
         <form className="space-y-6">

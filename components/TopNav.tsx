@@ -5,7 +5,7 @@ export default function TopNav() {
     <nav className="bg-white border-b border-slate-200 py-2">
       <div className="container mx-auto px-4 lg:px-20 flex justify-between items-center text-xs text-slate-500">
         <div className="flex items-center gap-3 md:gap-4">
-          <span className="hidden lg:inline">您好，欢迎访问智享-质量基础设施创新中心！</span>
+          <span className="hidden lg:inline">您好，欢迎访问质享-质量创新中心！</span>
           <span className="hidden sm:inline lg:hidden">欢迎访问！</span>
           <a className="hover:text-[#0054db] flex items-center gap-1" href="#" title="小程序">
             <Smartphone size={14} />
